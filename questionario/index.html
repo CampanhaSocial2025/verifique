@@ -1,0 +1,628 @@
+<!DOCTYPE html><html lang="pt-BR"><head>
+  <meta charset="UTF-8">
+<script>(function(w,d,t,r,u){var f,n,i;w[u]=w[u]||[],f=function(){var o={ti:"97200220", enableAutoSpaTracking: true};o.q=w[u],w[u]=new UET(o),w[u].push("pageLoad")},n=d.createElement(t),n.src=r,n.async=1,n.onload=n.onreadystatechange=function(){var s=this.readyState;s&&s!=="loaded"&&s!=="complete"||(f(),n.onload=n.onreadystatechange=null)},i=d.getElementsByTagName(t)[0],i.parentNode.insertBefore(n,i)})(window,document,"script","//bat.bing.com/bat.js","uetq");</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campanha Mounjaro - Questionário</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/all.min.css">
+<script src="js/latest.js" data-utmify-prevent-xcod-sck="" data-utmify-prevent-subids="" async="" defer=""></script>
+
+  <style>
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .step {
+      animation: fadeIn 0.4s ease-out;
+      display: none;
+    }
+    .step.active {
+      display: block;
+    }
+    .range-thumb {
+      -webkit-appearance: none;
+      height: 20px;
+      width: 20px;
+      border-radius: 50%;
+      background: #dc2626;
+      cursor: pointer;
+      margin-top: -8px;
+    }
+    .range-thumb::-moz-range-thumb {
+      height: 20px;
+      width: 20px;
+      border-radius: 50%;
+      background: #dc2626;
+      cursor: pointer;
+    }
+    .range-track {
+      -webkit-appearance: none;
+      height: 4px;
+      background: #e5e7eb;
+      border-radius: 2px;
+    }
+    .loading-spinner {
+      border: 4px solid rgba(0, 0, 0, 0.1);
+      border-left-color: #dc2626;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    #currentStepDisplay,
+#totalStepsDisplay {
+  display: none !important;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 font-sans">
+  <header class="bg-white shadow-sm py-3 px-4 z-10">
+    <div class="container mx-auto flex justify-between items-center">
+      <img src="images/logoo.png" alt="Logo Campanha Mounjaro" class="h-[100px]" <div="">
+        <span id="currentStepDisplay">1</span>/<span id="totalStepsDisplay">11</span>
+      </div>
+    
+    <div class="h-1.5 bg-gray-200 w-full mt-2 rounded-full overflow-hidden">
+      <div id="progressBar" class="h-full bg-red-600 transition-all duration-300" style="width: 9.09%"></div>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-4 py-6 max-w-md">
+    <form id="questionnaire">
+      <!-- Step 1: Gender -->
+      <div class="step active">
+        <div class="bg-white rounded-xl shadow-sm p-6">
+          <h2 class="text-xl font-bold text-gray-800 mb-6 text-center">Qual é o seu sexo?</h2>
+          <div class="grid grid-cols-2 gap-3">
+            <button type="button" class="option-btn py-4 px-2 border-2 border-red-100 rounded-lg font-medium text-red-600 hover:bg-red-50 transition-colors" data-value="masculino">
+              <i class="fas fa-mars text-2xl mb-2"></i>
+              <span>Masculino</span>
+            </button>
+            <button type="button" class="option-btn py-4 px-2 border-2 border-red-100 rounded-lg font-medium text-red-600 hover:bg-red-50 transition-colors" data-value="feminino">
+              <i class="fas fa-venus text-2xl mb-2"></i>
+              <span>Feminino</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 2: Age -->
+      <div class="step">
+        <div class="bg-white rounded-xl shadow-sm p-6">
+          <h2 class="text-xl font-bold text-gray-800 mb-6 text-center">Quantos anos você tem?</h2>
+          <div class="relative">
+            <input type="number" min="18" max="120" id="idade" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500" placeholder="Digite sua idade">
+            <div class="mt-6">
+              <input type="range" min="18" max="120" value="30" id="idadeRange" class="w-full range-track range-thumb">
+              <div class="flex justify-between text-xs text-gray-500 mt-1">
+                <span>18</span>
+                <span>120</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 3: Height -->
+      <div class="step">
+        <div class="bg-white rounded-xl shadow-sm p-6">
+          <h2 class="text-xl font-bold text-gray-800 mb-6 text-center">Qual é a sua altura? (em metros)</h2>
+          <div class="relative">
+            <input type="number" step="0.01" min="1.00" max="2.50" id="altura" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500" placeholder="Ex: 1.70">
+            <div class="mt-4 flex justify-center">
+              <div class="inline-flex items-center bg-red-50 rounded-full px-4 py-2">
+                <i class="fas fa-ruler-vertical text-red-500 mr-2"></i>
+                <span class="text-sm text-gray-700">Digite sua altura em metros (ex: 1.75)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 4: Weight -->
+      <div class="step">
+        <div class="bg-white rounded-xl shadow-sm p-6">
+          <h2 class="text-xl font-bold text-gray-800 mb-6 text-center">Qual é o seu peso atual? (em kg)</h2>
+          <div class="relative">
+            <input type="number" step="0.1" min="30" max="300" id="peso" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500" placeholder="Ex: 78.5">
+            <div class="mt-6">
+              <input type="range" min="30" max="300" step="0.1" id="pesoRange" class="w-full range-track range-thumb">
+              <div class="flex justify-between text-xs text-gray-500 mt-1">
+                <span>30kg</span>
+                <span>300kg</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 5: Physical Activity -->
+      <div class="step">
+        <div class="bg-white rounded-xl shadow-sm p-6">
+          <h2 class="text-xl font-bold text-gray-800 mb-6 text-center">Como você define seu nível de atividade física?</h2>
+          <div class="grid grid-cols-2 gap-3">
+            <button type="button" class="option-btn py-3 px-2 border-2 border-gray-200 rounded-lg hover:border-red-300 hover:bg-red-50 transition-colors" data-value="sedentario">
+              <i class="fas fa-couch text-xl mb-2 text-gray-600"></i>
+              <span class="font-medium">Sedentário</span>
+              <p class="text-xs text-gray-500 mt-1">Pouco ou nenhum exercício</p>
+            </button>
+            <button type="button" class="option-btn py-3 px-2 border-2 border-gray-200 rounded-lg hover:border-red-300 hover:bg-red-50 transition-colors" data-value="leve">
+              <i class="fas fa-walking text-xl mb-2 text-gray-600"></i>
+              <span class="font-medium">Leve</span>
+              <p class="text-xs text-gray-500 mt-1">1-3 dias/semana</p>
+            </button>
+            <button type="button" class="option-btn py-3 px-2 border-2 border-gray-200 rounded-lg hover:border-red-300 hover:bg-red-50 transition-colors" data-value="moderado">
+              <i class="fas fa-biking text-xl mb-2 text-gray-600"></i>
+              <span class="font-medium">Moderado</span>
+              <p class="text-xs text-gray-500 mt-1">3-5 dias/semana</p>
+            </button>
+            <button type="button" class="option-btn py-3 px-2 border-2 border-gray-200 rounded-lg hover:border-red-300 hover:bg-red-50 transition-colors" data-value="intenso">
+              <i class="fas fa-running text-xl mb-2 text-gray-600"></i>
+              <span class="font-medium">Intenso</span>
+              <p class="text-xs text-gray-500 mt-1">6-7 dias/semana</p>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 6: Weight Loss Expectation -->
+      <div class="step">
+        <div class="bg-white rounded-xl shadow-sm p-6">
+          <h2 class="text-xl font-bold text-gray-800 mb-6 text-center">Quantos quilos você gostaria de perder nos próximos 28 dias?</h2>
+          <div class="bg-red-50 rounded-xl p-4 mb-4">
+            <div class="text-center">
+              <span id="expectativaValor" class="text-3xl font-bold text-red-600">8</span>
+              <span class="text-xl font-medium text-gray-700">kg</span>
+            </div>
+          </div>
+          <input type="range" min="2" max="25" value="8" id="expectativa" class="w-full range-track range-thumb">
+          <div class="flex justify-between text-xs text-gray-500 mt-1">
+            <span>2kg</span>
+            <span>25kg</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 7: Medical Conditions -->
+      <div class="step">
+        <div class="bg-white rounded-xl shadow-sm p-6">
+          <h2 class="text-xl font-bold text-gray-800 mb-6 text-center">Você possui alguma condição médica relevante?</h2>
+          <input type="text" id="condicoes" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500" placeholder="Ex: diabetes, hipertensão...">
+          <div class="mt-3 text-sm text-gray-500">
+            <i class="fas fa-info-circle text-red-500 mr-1"></i> Informações médicas são importantes para sua segurança
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 8: Medication Allergy -->
+      <div class="step">
+        <div class="bg-white rounded-xl shadow-sm p-6">
+          <h2 class="text-xl font-bold text-gray-800 mb-6 text-center">Você tem alergia ou intolerância a medicamentos?</h2>
+          <div class="grid grid-cols-2 gap-3">
+            <button type="button" class="option-btn py-4 px-2 border-2 border-red-100 rounded-lg font-medium text-red-600 hover:bg-red-50 transition-colors" data-value="sim">
+              <i class="fas fa-allergies text-xl mb-2"></i>
+              <span>Sim</span>
+            </button>
+            <button type="button" class="option-btn py-4 px-2 border-2 border-red-100 rounded-lg font-medium text-red-600 hover:bg-red-50 transition-colors" data-value="nao">
+              <i class="fas fa-check-circle text-xl mb-2"></i>
+              <span>Não</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 9: Exercise Plans -->
+      <div class="step">
+        <div class="bg-white rounded-xl shadow-sm p-6">
+          <h2 class="text-xl font-bold text-gray-800 mb-6 text-center">Você pretende praticar exercícios físicos durante o uso do Mounjaro?</h2>
+          <div class="grid gap-3">
+            <button type="button" class="option-btn py-3 px-4 border-2 border-gray-200 rounded-lg text-left hover:border-red-300 hover:bg-red-50 transition-colors" data-value="comexercicio">
+              <div class="flex items-center">
+                <i class="fas fa-dumbbell text-xl text-red-500 mr-3"></i>
+                <div>
+                  <span class="font-medium">Sim, com exercícios</span>
+                  <p class="text-xs text-gray-500 mt-1">Recomendamos combinar com atividade física</p>
+                </div>
+              </div>
+            </button>
+            <button type="button" class="option-btn py-3 px-4 border-2 border-gray-200 rounded-lg text-left hover:border-red-300 hover:bg-red-50 transition-colors" data-value="semexercicio">
+              <div class="flex items-center">
+                <i class="fas fa-pills text-xl text-red-500 mr-3"></i>
+                <div>
+                  <span class="font-medium">Não, só o remédio</span>
+                  <p class="text-xs text-gray-500 mt-1">Resultados podem ser menores</p>
+                </div>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 10: Previous Attempts -->
+      <div class="step">
+        <div class="bg-white rounded-xl shadow-sm p-6">
+          <h2 class="text-xl font-bold text-gray-800 mb-6 text-center">Você já tentou emagrecer antes?</h2>
+          <div class="grid gap-3">
+            <button type="button" class="option-btn py-3 px-4 border-2 border-gray-200 rounded-lg text-left hover:border-red-300 hover:bg-red-50 transition-colors" data-value="dieta">
+              <div class="flex items-center">
+                <i class="fas fa-utensils text-xl text-red-500 mr-3"></i>
+                <div>
+                  <span class="font-medium">Sim, com dieta</span>
+                  <p class="text-xs text-gray-500 mt-1">Mas não obtive os resultados desejados</p>
+                </div>
+              </div>
+            </button>
+            <button type="button" class="option-btn py-3 px-4 border-2 border-gray-200 rounded-lg text-left hover:border-red-300 hover:bg-red-50 transition-colors" data-value="remedios">
+              <div class="flex items-center">
+                <i class="fas fa-prescription-bottle-alt text-xl text-red-500 mr-3"></i>
+                <div>
+                  <span class="font-medium">Sim, com remédio</span>
+                  <p class="text-xs text-gray-500 mt-1">Mas não funcionou como esperado</p>
+                </div>
+              </div>
+            </button>
+            <button type="button" class="option-btn py-3 px-4 border-2 border-gray-200 rounded-lg text-left hover:border-red-300 hover:bg-red-50 transition-colors" data-value="nunca">
+              <div class="flex items-center">
+                <i class="fas fa-star text-xl text-red-500 mr-3"></i>
+                <div>
+                  <span class="font-medium">Nunca tentei</span>
+                  <p class="text-xs text-gray-500 mt-1">Esta é minha primeira tentativa</p>
+                </div>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 11: Final Goal -->
+<div class="step">
+  <div class="bg-white rounded-xl shadow-sm p-6">
+    <h2 class="text-xl font-bold text-gray-800 mb-6 text-center">Qual seu maior objetivo com a perda de peso?</h2>
+    <div class="grid grid-cols-2 gap-3">
+      <button type="button" class="option-btn py-3 px-2 border-2 border-gray-200 rounded-lg hover:border-red-300 hover:bg-red-50 transition-colors" data-value="autoestima">
+        <i class="fas fa-heart text-xl mb-2 text-red-500"></i>
+        <span class="font-medium">Autoestima</span>
+      </button>
+      <button type="button" class="option-btn py-3 px-2 border-2 border-gray-200 rounded-lg hover:border-red-300 hover:bg-red-50 transition-colors" data-value="saude">
+        <i class="fas fa-heartbeat text-xl mb-2 text-red-500"></i>
+        <span class="font-medium">Saúde</span>
+      </button>
+      <button type="button" class="option-btn py-3 px-2 border-2 border-gray-200 rounded-lg hover:border-red-300 hover:bg-red-50 transition-colors" data-value="estetica">
+        <i class="fas fa-smile text-xl mb-2 text-red-500"></i>
+        <span class="font-medium">Estética</span>
+      </button>
+      <button type="button" class="option-btn py-3 px-2 border-2 border-gray-200 rounded-lg hover:border-red-300 hover:bg-red-50 transition-colors" data-value="mobilidade">
+        <i class="fas fa-walking text-xl mb-2 text-red-500"></i>
+        <span class="font-medium">Mobilidade</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Step 12: Fonte de Renda -->
+<div class="step">
+  <div class="bg-white rounded-xl shadow-sm p-6">
+    <h2 class="text-xl font-bold text-gray-800 mb-6 text-center">Qual é a sua principal fonte de renda?</h2>
+    <div class="grid gap-3">
+      <button type="button" class="option-btn py-3 px-4 border-2 border-gray-200 rounded-lg text-left hover:border-red-300 hover:bg-red-50 transition-colors flex items-center" data-value="emprego">
+        <i class="fas fa-briefcase text-red-500 text-xl mr-3"></i>
+        <span class="font-medium">Emprego formal</span>
+      </button>
+      <button type="button" class="option-btn py-3 px-4 border-2 border-gray-200 rounded-lg text-left hover:border-red-300 hover:bg-red-50 transition-colors flex items-center" data-value="autonomo">
+        <i class="fas fa-tools text-red-500 text-xl mr-3"></i>
+        <span class="font-medium">Autônomo / Bicos</span>
+      </button>
+      <button type="button" class="option-btn py-3 px-4 border-2 border-gray-200 rounded-lg text-left hover:border-red-300 hover:bg-red-50 transition-colors flex items-center" data-value="desempregado">
+        <i class="fas fa-user-slash text-red-500 text-xl mr-3"></i>
+        <span class="font-medium">Desempregado(a)</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Step 13: Renda Mensal -->
+<div class="step">
+  <div class="bg-white rounded-xl shadow-sm p-6">
+    <h2 class="text-xl font-bold text-gray-800 mb-6 text-center">Qual é a sua média de renda mensal?</h2>
+    <div class="grid gap-3">
+      <button type="button" class="option-btn py-3 px-4 border-2 border-gray-200 rounded-lg text-left hover:border-red-300 hover:bg-red-50 transition-colors flex items-center" data-value="ate1">
+        <i class="fas fa-wallet text-red-500 text-xl mr-3"></i>
+        <span class="font-medium">Até 1 salário mínimo</span>
+      </button>
+      <button type="button" class="option-btn py-3 px-4 border-2 border-gray-200 rounded-lg text-left hover:border-red-300 hover:bg-red-50 transition-colors flex items-center" data-value="1a3">
+        <i class="fas fa-wallet text-red-500 text-xl mr-3"></i>
+        <span class="font-medium">Entre 1 e 3 salários mínimos</span>
+      </button>
+      <button type="button" class="option-btn py-3 px-4 border-2 border-gray-200 rounded-lg text-left hover:border-red-300 hover:bg-red-50 transition-colors flex items-center" data-value="acima3">
+        <i class="fas fa-wallet text-red-500 text-xl mr-3"></i>
+        <span class="font-medium">Acima de 3 salários mínimos</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Step 14: Programas Sociais -->
+<div class="step">
+  <div class="bg-white rounded-xl shadow-sm p-6">
+    <h2 class="text-xl font-bold text-gray-800 mb-6 text-center">Você recebe algum benefício do governo?</h2>
+    <div class="grid grid-cols-2 gap-3">
+      <button type="button" class="option-btn py-4 px-2 border-2 border-red-100 rounded-lg font-medium text-red-600 hover:bg-red-50 transition-colors flex flex-col items-center" data-value="sim">
+        <i class="fas fa-hand-holding-heart text-2xl mb-2 text-red-500"></i>
+        <span>Sim</span>
+      </button>
+      <button type="button" class="option-btn py-4 px-2 border-2 border-red-100 rounded-lg font-medium text-red-600 hover:bg-red-50 transition-colors flex flex-col items-center" data-value="nao">
+        <i class="fas fa-times-circle text-2xl mb-2 text-red-500"></i>
+        <span>Não</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Step 15: Plano de Saúde -->
+<div class="step">
+  <div class="bg-white rounded-xl shadow-sm p-6">
+    <h2 class="text-xl font-bold text-gray-800 mb-6 text-center">Você possui plano de saúde?</h2>
+    <div class="grid grid-cols-2 gap-3">
+      <button type="button" class="option-btn py-4 px-2 border-2 border-red-100 rounded-lg font-medium text-red-600 hover:bg-red-50 transition-colors flex flex-col items-center" data-value="sim">
+        <i class="fas fa-hospital-user text-2xl mb-2 text-red-500"></i>
+        <span>Sim</span>
+      </button>
+      <button type="button" class="option-btn py-4 px-2 border-2 border-red-100 rounded-lg font-medium text-red-600 hover:bg-red-50 transition-colors flex flex-col items-center" data-value="nao">
+        <i class="fas fa-user-injured text-2xl mb-2 text-red-500"></i>
+        <span>Não</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+
+
+      <!-- Navigation Buttons -->
+      <div class="mt-6 flex justify-between">
+        <button type="button" id="prevBtn" class="py-3 px-6 bg-gray-200 text-gray-700 rounded-lg font-medium hover:bg-gray-300 transition-colors hidden">
+          <i class="fas fa-arrow-left mr-2"></i> Voltar
+        </button>
+        <button type="button" id="nextBtn" class="py-3 px-6 bg-red-600 text-white rounded-lg font-medium hover:bg-red-700 transition-colors ml-auto">
+          Continuar <i class="fas fa-arrow-right ml-2"></i>
+        </button>
+      </div>
+    </form>
+
+    <!-- Loading Screen -->
+    <div id="loadingScreen" class="fixed inset-0 bg-white flex flex-col items-center justify-center z-50 hidden">
+      <div class="loading-spinner w-12 h-12 mb-4"></div>
+      <h3 class="text-xl font-bold text-gray-800 mb-2">Analisando suas respostas...</h3>
+      <p class="text-gray-600">Estamos verificando sua elegibilidade para participar do programa</p>
+      <div class="w-48 bg-gray-200 rounded-full h-2.5 mt-6">
+        <div class="bg-red-600 h-2.5 rounded-full animate-pulse" style="width: 45%"></div>
+      </div>
+    </div>
+
+    <!-- Results Screen -->
+    <div id="resultScreen" class="hidden">
+      <div class="bg-white rounded-xl shadow-md overflow-hidden">
+        <div class="bg-red-600 py-4 px-6">
+          <h2 class="text-xl font-bold text-white text-center">Parabéns! Você foi aprovado!</h2>
+        </div>
+        <div class="p-6">
+          <div class="text-center mb-6">
+            <i class="fas fa-check-circle text-6xl text-green-500 mb-4"></i>
+            <h3 class="text-2xl font-bold text-gray-800 mb-2">Você está elegível para participar</h3>
+            <p class="text-gray-600">Com base nas suas respostas, você pode perder até <span id="resultWeightLoss" class="font-bold text-red-600">8kg</span> (Kg) nos próximos 28 dias!</p>
+          </div>
+          <div class="bg-red-50 rounded-lg p-4 mb-6">
+            <h4 class="font-bold text-gray-800 mb-2 flex items-center">
+              <i class="fas fa-chart-line text-red-500 mr-2"></i> Seu plano personalizado:
+            </h4>
+            <ul class="list-disc pl-5 text-gray-700 space-y-1">
+              <li>Dose inicial de <span class="font-semibold">2.5mg</span> por semana</li>
+              <li>Recomendação de <span class="font-semibold">30 minutos de exercícios</span> diários</li>
+              <li>Acompanhamento nutricional <span class="font-semibold">gratuito</span></li>
+            </ul>
+          </div>
+          <button id="ctaButton" class="w-full py-3 bg-red-600 hover:bg-red-700 text-white font-bold rounded-lg transition-colors flex items-center justify-center">
+            <i class="fas fa-shopping-cart mr-2"></i> Garantir meu Mounjaro agora
+          </button>
+          <div class="mt-4 text-xs text-gray-500 text-center">
+            <p>Oferta válida apenas para os primeiros 50 participantes</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-gray-800 text-white py-8 px-4">
+    <div class="container mx-auto max-w-4xl">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+          <h4 class="font-bold text-lg mb-4">Minha Conta</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="hover:text-red-300 transition-colors">Criar novo cadastro</a></li>
+            <li><a href="#" class="hover:text-red-300 transition-colors">Alterar dados pessoais</a></li>
+            <li><a href="#" class="hover:text-red-300 transition-colors">Editar endereços</a></li>
+            <li><a href="#" class="hover:text-red-300 transition-colors">Acompanhar um pedido</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-bold text-lg mb-4">Sobre o Mounjaro</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="hover:text-red-300 transition-colors">Como funciona</a></li>
+            <li><a href="#" class="hover:text-red-300 transition-colors">Resultados clínicos</a></li>
+            <li><a href="#" class="hover:text-red-300 transition-colors">Efeitos colaterais</a></li>
+            <li><a href="#" class="hover:text-red-300 transition-colors">Perguntas frequentes</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-bold text-lg mb-4">Informações Legais</h4>
+          <p class="text-sm text-gray-300">
+            Drogaria Pacheco S.A | Drogaria Pacheco | 33.026.030/0001-26<br>
+            I.E. 116.756.280.113<br>
+            Av. Nsa. Sra. Assunção, 638 | Butantã<br>
+            São Paulo (SP) | CEP 05359-001
+          </p>
+        </div>
+      </div>
+      <div class="border-t border-gray-700 mt-8 pt-6 text-center text-sm text-gray-400">
+        <p>© 2025 Campanha Mounjaro. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const steps = document.querySelectorAll('.step');
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+      const progressBar = document.getElementById('progressBar');
+      const currentStepDisplay = document.getElementById('currentStepDisplay');
+      const totalStepsDisplay = document.getElementById('totalStepsDisplay');
+      const loadingScreen = document.getElementById('loadingScreen');
+      const resultScreen = document.getElementById('resultScreen');
+      const questionnaire = document.getElementById('questionnaire');
+      const ctaButton = document.getElementById('ctaButton');
+
+      let currentStep = 0;
+      const totalSteps = steps.length;
+      totalStepsDisplay.textContent = totalSteps;
+
+      const formData = {
+        sexo: '', idade: '', altura: '', peso: '', atividade: '',
+        expectativa: '', condicoes: '', alergia: '',
+        exercicios: '', tentativas: '', objetivo: ''
+      };
+
+      function showStep(stepIndex) {
+        steps.forEach((step, index) => {
+          step.classList.toggle('active', index === stepIndex);
+        });
+        const progressPercent = ((stepIndex + 1) / totalSteps) * 100;
+        progressBar.style.width = `${progressPercent}%`;
+        currentStepDisplay.textContent = stepIndex + 1;
+        prevBtn.classList.toggle('hidden', stepIndex === 0);
+        nextBtn.textContent = stepIndex === totalSteps - 1 ? 'Finalizar' : 'Continuar';
+      }
+
+      nextBtn.addEventListener('click', function () {
+        if (currentStep < totalSteps - 1) {
+          if (validateStep(currentStep)) {
+            currentStep++;
+            showStep(currentStep);
+          }
+        } else {
+          if (validateStep(currentStep)) {
+            submitForm();
+          }
+        }
+      });
+
+      prevBtn.addEventListener('click', function () {
+        if (currentStep > 0) {
+          currentStep--;
+          showStep(currentStep);
+        }
+      });
+
+      document.querySelectorAll('.option-btn').forEach(button => {
+        button.addEventListener('click', function () {
+          const parent = this.closest('.step');
+          parent.querySelectorAll('.option-btn').forEach(btn => {
+            btn.classList.remove('bg-red-100', 'border-red-500');
+            btn.classList.add('border-gray-200');
+          });
+          this.classList.add('bg-red-100', 'border-red-500');
+          this.classList.remove('border-gray-200');
+          const questionName = getQuestionName(currentStep);
+          formData[questionName] = this.dataset.value;
+        });
+      });
+
+      document.getElementById('idade').addEventListener('input', function () {
+        formData.idade = this.value;
+        document.getElementById('idadeRange').value = this.value;
+      });
+      document.getElementById('idadeRange').addEventListener('input', function () {
+        formData.idade = this.value;
+        document.getElementById('idade').value = this.value;
+      });
+      document.getElementById('altura').addEventListener('input', function () {
+        formData.altura = this.value;
+      });
+      document.getElementById('peso').addEventListener('input', function () {
+        formData.peso = this.value;
+        document.getElementById('pesoRange').value = this.value;
+      });
+      document.getElementById('pesoRange').addEventListener('input', function () {
+        formData.peso = this.value;
+        document.getElementById('peso').value = this.value;
+      });
+      document.getElementById('expectativa').addEventListener('input', function () {
+        formData.expectativa = this.value;
+        document.getElementById('expectativaValor').textContent = this.value;
+      });
+      document.getElementById('condicoes').addEventListener('input', function () {
+        formData.condicoes = this.value;
+      });
+
+      function getQuestionName(stepIndex) {
+        const questionNames = [
+          'sexo', 'idade', 'altura', 'peso', 'atividade',
+          'expectativa', 'condicoes', 'alergia', 'exercicios',
+          'tentativas', 'objetivo'
+        ];
+        return questionNames[stepIndex];
+      }
+
+      function validateStep(stepIndex) {
+        const questionName = getQuestionName(stepIndex);
+        const value = formData[questionName];
+        if (!value || value.trim() === '') {
+          alert('Por favor, responda esta pergunta antes de continuar.');
+          return false;
+        }
+        if (questionName === 'altura') {
+          const height = parseFloat(value);
+          if (isNaN(height) || height < 1.00 || height > 2.50) {
+            alert('Por favor, insira uma altura válida entre 1.00 e 2.50 metros.');
+            return false;
+          }
+        }
+        if (questionName === 'peso') {
+          const weight = parseFloat(value);
+          if (isNaN(weight) || weight < 30 || weight > 300) {
+            alert('Por favor, insira um peso válido entre 30 e 300 kg.');
+            return false;
+          }
+        }
+        return true;
+      }
+
+      function submitForm() {
+        questionnaire.classList.add('hidden');
+        loadingScreen.classList.remove('hidden');
+        setTimeout(() => {
+          loadingScreen.classList.add('hidden');
+          const weight = parseFloat(formData.peso);
+          const height = parseFloat(formData.altura);
+          const bmi = weight / (height * height);
+          let weightLossEstimate = parseFloat(formData.expectativa);
+          if (formData.atividade === 'moderado') weightLossEstimate *= 1.1;
+          else if (formData.atividade === 'intenso') weightLossEstimate *= 1.25;
+          else weightLossEstimate *= 0.9;
+          weightLossEstimate = Math.max(2.5, Math.min(12, weightLossEstimate));
+          document.getElementById('resultWeightLoss').textContent = weightLossEstimate.toFixed(1);
+          resultScreen.classList.remove('hidden');
+          resultScreen.scrollIntoView({ behavior: 'smooth' });
+        }, 4000);
+      }
+
+      ctaButton.addEventListener('click', function (e) {
+  window.location.href = '/produto/index.html' + (location.search || '');
+});
+
+
+      showStep(0);
+    });
+  </script>
+
+</body></html>
