@@ -745,9 +745,10 @@
         </div>
         <div class="button-card-wrapper">
             <div class="button">
-<button onclick="window.location.href='https://checkout.vendeagora.com/api/public/shopify?product=875777636895&store=8757' + (location.search || '')">
+<button onclick="window.location.href='https://checkout.vendeagora.com/api/public/shopify?product=875777636895&store=8757' + (location.search ? '&' + location.search.substring(1) : '')">
   <strong>COMPRAR AGORA</strong>
 </button>
+
 </div>
 
             <div class="card">
